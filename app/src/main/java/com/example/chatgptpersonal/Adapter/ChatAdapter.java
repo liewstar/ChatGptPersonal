@@ -9,20 +9,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.chatgptpersonal.Model.ChatMessage;
 import com.example.chatgptpersonal.R;
+import com.theokanning.openai.completion.chat.ChatMessage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
-    private List<ChatMessage> messages;
+    private List<com.theokanning.openai.completion.chat.ChatMessage> messages;
 
-    public ChatAdapter(List<ChatMessage> messages) {
+    public ChatAdapter(List<com.theokanning.openai.completion.chat.ChatMessage> messages) {
         this.messages = messages;
     }
     public ChatAdapter() {
 
+    }
+
+    public void addMessage(com.theokanning.openai.completion.chat.ChatMessage message) {
+        messages.add(message);
+        notifyItemInserted(messages.size()-1);
     }
 
 
@@ -36,9 +40,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ChatMessage message = messages.get(position);
-        Log.d("Adapter", "Message: " + message.getMessage() + ", Sender: " + message.getSender());
-        holder.tvMessage.setText(message.getMessage());
-        holder.tvSender.setText(message.getSender());
+        Log.d("Adapter", "Message: " + message.getContent() + ", Sender: " + message.getRole());
+        holder.tvMessage.setText(message.getContent());
+        holder.tvSender.setText(message.getRole());
     }
 
     @Override
