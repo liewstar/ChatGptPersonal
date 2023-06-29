@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public List<com.theokanning.openai.completion.chat.ChatMessage> messages = new ArrayList<>();
 
-    String token = "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";
+    String token = "";
 
 
     @SuppressLint("MissingInflatedId")

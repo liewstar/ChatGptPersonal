@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/baseline_message_24"
+        android:title="对话" />
+
+    <item
+        android:id="@+id/nva_app"
+        android:icon="@drawable/baseline_select_all_24"
+        android:title="应用" />
+
+    <item
+        android:id="@+id/nva_set"
+        android:icon="@drawable/baseline_settings_applications_24"
+        android:title="设置" />
+</menu>
