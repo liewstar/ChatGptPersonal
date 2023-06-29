@@ -1,5 +1,6 @@
-this is a ChatGpt for android
-# TODO
+# TalkToAi
+这是一款基于ChatGpt的手机应用
+## TODO
 - [ ] 文本输出流式传输
 - [ ] 优化会话界面
 - [ ] 新增预设对话
